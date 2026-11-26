@@ -1,61 +1,169 @@
 html, body {
     height: 100%;
     font-family: "Sora", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
 }
 
-h1, h2, h3, h4,h5, h6 {
+h1, h2, .main-content-subtitle {
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
 }
 
-img {
-    max-width: 100%;
-}
+img { max-width: 100%; }
 
-.border_red {
-    border: 1px solid red;
-}
+.border_red { border: 1px solid red; }
 
 .wrapper {
     max-width: 1141px;
-    margin:  0px auto;
+    margin: 0 auto;
 }
+
 .main-section {
     background-color: #F2F7FF;
     border-radius: 32px;
 }
+
 .main-section header {
     margin: 32px 36px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
 .header-logo {
     position: relative;
     display: inline-block;
 }
+
 .header-logo img {
     position: absolute;
     right: -46px;
     top: -18px;
 }
+
 .header-logo h1 {
     margin-top: 9px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 32px;
-    background: linear-gradient(
-            to right bottom,
-            #3a8ef6,
-            #2f7ffd,
-            #3b6eff,
-            #5358ff,
-            #6f3afa
-    );
-    background-clip: text;
+    background: linear-gradient(to right bottom, #3a8ef6, #2f7ffd, #3b6eff, #5358ff, #6f3afa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
+}
+
+.header-navigate ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.header-navigate a {
+    font-size: 16px;
+    color: #6C87AE;
+    text-decoration: none;
+}
+
+.header-navigate li:first-child a,
+.header-navigate a:hover {
+    color: #3A8EF6;
+    font-weight: 500;
+}
+
+.header-button,
+.main-content-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    background: linear-gradient(96.14deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);
+    box-shadow: 0 8px 23px rgba(65, 132, 247, 0.24);
+    border-radius: 100px;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.main-content {
+    border: 1px solid blue;
+    margin-top: 108px;
+    display: flex;
+    gap: 52px;
+}
+
+.main-content-column {
+    width: 50%;
+    border: 1px solid green;
+}
+
+.main-content-column:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main-content-subtitle {
+    font-weight: 500;
+    font-size: 22px;
+    color: #00BFA5;
+    margin-bottom: 12px;
+}
+
+.main-content-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #031432;
+    margin-bottom: 24px;
+}
+
+.main-content-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6C87AE;
+    margin-bottom: 36px;
+}
+
+.main-content-column:last-child {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content-plus-one,
+.main-content-plus-two,
+.main-content-plus-three,
+.main-content-plus-four {
+    position: absolute;
+    mix-blend-mode: multiply;
+    --radius: 265px; /* Радиус круговой орбиты вокруг докторов */
+    animation: orbit 14s linear infinite;
+}
+
+.main-content-plus-one {
+    width: 128px;
+    animation-delay: 0s;
+}
+
+.main-content-plus-two {
+    width: 64px;
+    animation-delay: -3.5s;
+}
+
+.main-content-plus-three {
+    width: 144px;
+    animation-delay: -7s;
+}
+
+.main-content-plus-four {
+    width: 124px;
+    animation-delay: -10.5s;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
+    }
 }
